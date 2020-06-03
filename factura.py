@@ -69,7 +69,7 @@ class Impresion():
             print(self.gen_a)
             print("Subtotal:",self.sub_total)
             print("ITMBS:+",self.itbms_f)
-
+           
             #Descuento
             if self.sub_total <= 600 and self.sub_total >= 200:
                 self.total = print("Reducción del 15%: -",self.desc_15,"\nTotal:",self.tot_itbms - self.desc_15)
@@ -77,25 +77,21 @@ class Impresion():
                 self.total = print("Reducción del 10%: -",self.desc_10,"\nTotal:",self.tot_itbms - self.desc_10)
             else:
                 self.total = print("Total:",self.tot_itbms)
-
-            #Total
-            return(self.total)
-            
-            print("[2].Volver a cotizacion")
-            print("[0].Volver al menú")
+            print("[0].Volver a Cotización")
+            print("[1].Volver al menú")
+            eleccion = input()
             
             #importacion
             from cotizacion_p import Cotizacion
             cr = Cotizacion()
 
-            cotizacion = input()
-            if cotizacion == "2":
-              return cr
-           
-            menu = input()
+            if eleccion == "0":
+                return cr
             
-            if menu == "0":
-              print("Ok")
-              break
+            if eleccion == "1":
+                print("Ok")
+            #Total
+            return(self.total)
+            
 
 p1 = Impresion()
