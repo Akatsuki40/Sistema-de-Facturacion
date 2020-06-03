@@ -1,5 +1,5 @@
-
 import os
+
 class Impresion():
     
     def __init__(self):
@@ -13,16 +13,21 @@ class Impresion():
         self.prec_a = precio_productos
         self.gen_a = productos_g
 
+        self.esta_nom = ("El Gran Almacen")
+        self.ruc = ("RUC 564-35-98512")
+        self.dv = ("DV 34")
+        self.tel = ("Telefono: 666-66666")
+
         numero = 0 #consecuente
   
         while True:
             numero = numero + 1 #Aumenta el num de factura
             os.system("clear")#Limpia la pantalla
             
-            print("El Gram Almacen")
-            print("RUC 564-35-98512")
-            print("DV 34")
-            print("Telefono: 666-66666")
+            print(self.esta_nom)
+            print(self.ruc)
+            print(self.dv)
+            print(self.tel)
             print("Factura")
     #____________________________________________
     
@@ -79,19 +84,18 @@ class Impresion():
                 self.total = print("Total:",self.tot_itbms)
             print("[0].Volver a Cotización")
             print("[1].Volver al menú")
+            print("[2].Imprimir factura y comprobante")
             eleccion = input()
             
-            #importacion
-            from cotizacion_p import Cotizacion
-            cr = Cotizacion()
-
-            if eleccion == "0":
-                return cr
-            
+            from comprobante import comprobant
+            cr = comprobant()
             if eleccion == "1":
                 print("Ok")
+          
+            if eleccion == "2":
+                return cr
+           
             #Total
-            return(self.total)
-            
+            return(self.total)              
 
 p1 = Impresion()
